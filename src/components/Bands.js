@@ -1,33 +1,16 @@
-import React, { Component } from 'react';
 
-class Bands extends Component {
+import React, { Component } from 'react'
+import Band from './Band'
 
- 
-
-    render(){
+export default class Bands extends Component {
+    
+    
+    render() {
         return (
-            null
+            <div>
+                {/* {console.log(this.props.bands)} */}
+                {this.props.bands.map(band => <Band key={band.id} id={band.id} name={band.name} deleteBand={this.props.deleteBand}/>)}
+            </div>
         )
     }
-
 }
-
-export default Bands
-
-// renderTodos = () => {
-//     return this.props.todos.map((todo) => (
-//       <Todo delete={this.props.delete} key={todo.id} todo={todo} />
-//     ));
-//   };
-// const Bands = props => {
-//     const allBands = props.bands.map((band, index) => {
-//         return (
-//             <li key={index}>{band.name}</li>
-//             )
-//     })
-
-//     return <div>{allBands}</div> 
-
-// }
-
-// export default Bands

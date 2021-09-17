@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 
 class Band extends Component {
-    render() {  
-        return null
-        
-    }
-}
 
-export default Band
 
-// const Todo = (props) => {
-//     return (
-//       <li>
-//         <span>{props.todo.text}</span>
-//         <button onClick={() => props.delete(props.todo.id)}>DELETE</button>
-//       </li>
-//     );
-//   };
+  handleClick = () => {
+    this.props.deleteBand(this.props.id)
+  }
+
+  render() {
+    return(
+      <div>
+        <li>{this.props.name}</li>
+        <button onClick={this.handleClick}>Delete</button>
+      </div>
+    );
+  }
+};
+
+export default Band;
